@@ -1,18 +1,12 @@
 // implement your API here. building your API. node index.js to initiate api.
-// const http = require("http");
 const express = require("express");
 
 const port = 5000;
 
 const server = express();
-// const server = http.createServer((req, res) => {
-//   res.satusCode = 200;
-//   res.setHeader("Content-Type", "text/plain");
-//   res.end("Hello World, from NodeJS");
-// });
-// everything form line 9 to 12 is below now. more dry.
+
 server.get("/", (req, res) => {
-  res.send("Hello world from express!");
+  res.send("Lets get some LOTR characters!");
 });
 // creating a route to the client side from the backend!
 server.listen(port, () => {
