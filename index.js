@@ -8,13 +8,17 @@ const server = express();
 // any requests for the http using the get method.
 // creating a route to the client side from the backend!
 server.get("/api/users", (req, res) => {
-  res.send("Lets get some LOTR characters!");
+  res
+    .status(500)
+    // .send("Lets get some LOTR characters!")
+    .json({ error: "The users information could not be retrieved." });
 });
 
 server.get("/api/users/:id", (req, res) => {
   res
-    .send("Welcome to Hobbit users!")
-    .json({ url: "/api/users", operation: "GET" });
+    .status(400)
+    // .send("Welcome to Hobbit users!")
+    .json({ message: "The user with the specified ID does not exist." });
 }); // READING DATA
 
 server.post("/api/users", (req, res) => {
@@ -29,9 +33,9 @@ server.put("/api/users/:id", (req, res) => {
 
 server.delete("/api/users/:id", (req, res) => {
   res
-    .status(204)
-    .send("deleted hobbits")
-    .json({ url: "/api/users/:id" });
+    .status(404)
+    // .send("deleted hobbits")
+    .json({ message: "The user with the specified ID does not exist." });
 }); // DELETE DATA
 
 server.get("/users", (req, res) => {
