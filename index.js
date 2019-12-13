@@ -1,4 +1,4 @@
-// implement your API here. building your API. node index.js to initiate api.
+// updated and implement your API here. building your API. node index.js to initiate api.
 const express = require("express");
 const users = require("./data/seeds/users");
 const port = 5000;
